@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "makings",
+  "info": {
+    "singularName": "making",
+    "pluralName": "makings",
+    "displayName": "Making",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "json"
+    },
+    "author": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "mediaURL": {
+      "type": "string"
+    },
+    "mediaName": {
+      "type": "string"
+    }
+  }
+}
