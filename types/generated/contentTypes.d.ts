@@ -808,6 +808,64 @@ export interface ApiMakingMaking extends Schema.CollectionType {
     date: Attribute.DateTime;
     mediaURL: Attribute.String;
     mediaName: Attribute.String;
+    Subcategory1: Attribute.Enumeration<
+      [
+        'AgTech',
+        'AI',
+        'Tech Due Diligence',
+        'Cloud',
+        'Coding',
+        'CompanyCulture',
+        'Process optimization',
+        'Value creation',
+        'Digital Transformation',
+        'Events',
+        'Featured',
+        'Healthcare',
+        'Innovation',
+        'Tech',
+        'Merge & Aqcuisitions',
+        'Mobile',
+        'News',
+        'Opinion',
+        'PrivateEquity',
+        'ProjectManagement',
+        'QualityAssurance',
+        'Team',
+        'UserInterface',
+        'UX'
+      ]
+    >;
+    Subcategory2: Attribute.Enumeration<
+      [
+        'AgTech',
+        'AI',
+        'Tech Due Diligence',
+        'Cloud',
+        'Coding',
+        'CompanyCulture',
+        'Process optimization',
+        'Value creation',
+        'Digital Transformation',
+        'Events',
+        'Featured',
+        'Healthcare',
+        'Innovation',
+        'Tech',
+        'Merge & Aqcuisitions',
+        'Mobile',
+        'News',
+        'Opinion',
+        'PrivateEquity',
+        'ProjectManagement',
+        'QualityAssurance',
+        'Team',
+        'UserInterface',
+        'UX'
+      ]
+    >;
+    Video: Attribute.Media;
+    coAuthor: Attribute.Enumeration<['A', 'B', 'C']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -822,6 +880,32 @@ export interface ApiMakingMaking extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewNew extends Schema.CollectionType {
+  collectionName: 'news';
+  info: {
+    singularName: 'new';
+    pluralName: 'news';
+    displayName: 'new';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Category: Attribute.Enumeration<['Business', 'UX']>;
+    Subcategory1: Attribute.Enumeration<['A', 'B']>;
+    Subcategory2: Attribute.Enumeration<['A', 'B', 'C', 'D']>;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -984,6 +1068,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::making.making': ApiMakingMaking;
+      'api::new.new': ApiNewNew;
       'api::platform.platform': ApiPlatformPlatform;
       'api::post.post': ApiPostPost;
       'api::test.test': ApiTestTest;

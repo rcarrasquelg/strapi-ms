@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "new"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Business",
+        "UX"
+      ]
+    },
+    "Subcategory1": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B"
+      ]
+    },
+    "Subcategory2": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

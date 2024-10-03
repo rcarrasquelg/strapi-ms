@@ -35,6 +35,83 @@
     },
     "mediaName": {
       "type": "string"
+    },
+    "Subcategory1": {
+      "type": "enumeration",
+      "enum": [
+        "AgTech",
+        "AI",
+        "Tech Due Diligence",
+        "Cloud",
+        "Coding",
+        "CompanyCulture",
+        "Process optimization",
+        "Value creation",
+        "Digital Transformation",
+        "Events",
+        "Featured",
+        "Healthcare",
+        "Innovation",
+        "Tech",
+        "Merge & Aqcuisitions",
+        "Mobile",
+        "News",
+        "Opinion",
+        "PrivateEquity",
+        "ProjectManagement",
+        "QualityAssurance",
+        "Team",
+        "UserInterface",
+        "UX"
+      ]
+    },
+    "Subcategory2": {
+      "type": "enumeration",
+      "enum": [
+        "AgTech",
+        "AI",
+        "Tech Due Diligence",
+        "Cloud",
+        "Coding",
+        "CompanyCulture",
+        "Process optimization",
+        "Value creation",
+        "Digital Transformation",
+        "Events",
+        "Featured",
+        "Healthcare",
+        "Innovation",
+        "Tech",
+        "Merge & Aqcuisitions",
+        "Mobile",
+        "News",
+        "Opinion",
+        "PrivateEquity",
+        "ProjectManagement",
+        "QualityAssurance",
+        "Team",
+        "UserInterface",
+        "UX"
+      ]
+    },
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "coAuthor": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ]
     }
   }
 }
