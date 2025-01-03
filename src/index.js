@@ -72,6 +72,115 @@ module.exports = {
     //     ],
     //   },
     // ];
+    // const AuthorsBlog = {
+    //   6: "Nacho Caldentey",
+    //   4: "Nancy Medica",
+    //   2: "Juan Diego Raimondi",
+    //   8: "Cesar DOnofrio",
+    //   28: "Luciana Caltabiano",
+    //   9: "Juan De Abreu",
+    //   40: "Natalia Martinez Lopez",
+    //   49: "Sergio Marchetti",
+    //   16: "Sol Romeo",
+    //   18: "Fernando Florez",
+    //   20: "Estuardo Robles",
+    //   22: "Lisandro Martinez",
+    //   31: "Mariano Jurich",
+    //   26: "Leandro Gonzalez",
+    //   29: "Damian Muti",
+    //   19: "Walter Zalazar",
+    //   32: "Matias Beckerle",
+    //   33: "Lucas Pelizza",
+    //   34: "Juan Muguruza",
+    //   37: "Gabriel Buyatti",
+    //   39: "Julian Chierichetti",
+    //   44: "Mariano Ravinale",
+    //   38: "Hernan Federico Cardoso",
+    //   47: "Santiago Tribiani",
+    //   52: "Marcelo Vazquez",
+    //   53: "Martin Deniro",
+    //   54: "Agustina Orsi",
+    //   56: "Noelia Franco",
+    //   57: "Betiana Castro",
+    //   35: "Martín Fantini",
+    //   58: "Jennifer Greyling",
+    //   59: "Paula Alonso Ishihara",
+    //   60: "Brian Sztamfater",
+    //   61: "Cristian Soria",
+    //   62: "Valentin Zamorano",
+    //   63: "Miguel Minoldo",
+    //   64: "Mariano Herrera",
+    //   65: "Franco Arza",
+    //   66: "Nicolás Martello",
+    //   67: "Jose Vazquez",
+    //   68: "Alejandra Garcia",
+    //   69: "Carlos Sampedro",
+    //   70: "Leslie Mariotti",
+    //   71: "Sebastian Grimberg",
+    //   72: "Martin Keimel",
+    //   73: "Celeste Senoseain",
+    //   74: "Federico Toledo",
+    //   75: "Dolores Finochietto",
+    //   76: "Agustin Sciotti",
+    //   77: "Marcos Rigoli",
+    //   78: "Eduardo Tolbaños",
+    //   79: "Daniel Altamirano",
+    //   80: "Pablo Popea",
+    //   81: "Ruben Lunda",
+    //   83: "Mauro Maldini",
+    //   84: "Damasia Aberg",
+    //   85: "Hernan Fino",
+    //   86: "Florencia Vispo",
+    //   87: "Esteban Tedesco",
+    //   30: "Nazareno Oviedo",
+    //   88: "Maria Alderete",
+    //   89: "Fernando Irahola",
+    //   90: "Silvia Vassolo",
+    //   91: "Melina Soto",
+    //   92: "Luis Sosa",
+    //   93: "Marcelo Spezia",
+    //   94: "Mariano Gayoso",
+    //   95: "Marcos Martinez",
+    //   96: "Cintia Lenkovich",
+    //   97: "Isidro Moreno",
+    //   98: "Gabriel Zimmermann",
+    //   99: "Sabrina Escalante",
+    //   100: "Rocio Colacci",
+    //   101: "José Sotes",
+    //   102: "Fabián Andrés Levin",
+    //   103: "Augusto Ghidini",
+    //   104: "Diego Suarez",
+    //   105: "Noelia Garcia",
+    //   106: "Paula Cascu",
+    //   107: "Dolores Moyano",
+    //   108: "Martina Massa",
+    //   109: "Co-authored",
+    //   110: "Juan Fazzini",
+    //   112: "Nicolas Monetto",
+    //   113: "Horacio Tovo",
+    //   114: "Valeria Ruggieri",
+    //   111: "Jeronimo Correa",
+    //   115: "Lucas Pellegrini",
+    //   116: "Making Sense",
+    //   117: "Ezequiel Szturmaj",
+    //   118: "David Salazar Zaffaroni",
+    //   119: "Vanina Vargas",
+    //   120: "Fabricio Barbagallo",
+    //   122: "Mariana Bevilacqua",
+    //   124: "Matias Caria",
+    //   125: "Martin Nedbal",
+    //   127: "Jose Basurto",
+    //   128: "Santiago Altobello",
+    //   129: "Candela Corpacci",
+    //   130: "Maria Buiras",
+    //   42: "Nadia Vega",
+    //   131: "Pablo Vittori",
+    //   133: "Sabrina Lujan",
+    //   136: "Lucas Boczkowski",
+    //   138: "Leyla Alfonzo",
+    //   139: "Jose Sauro",
+    //   141: "Juliana Torre",
+    // };
     // // Convertir el contenido HTML a Markdown
     // const convertToMarkdown = (content) => {
     //   return turndownService.turndown(content);
@@ -116,22 +225,25 @@ module.exports = {
     //     findMainCategory(subcategory1Value) ||
     //     findMainCategory(subcategory2Value) ||
     //     "Uncategorized";
+    //   // Obtener el nombre del autor a partir del ID
+    //   const authorName = AuthorsBlog[entry.author] || "Desconocido";
     //   // Preparar los datos para enviar a Strapi
     //   const dataToSend = {
     //     title: entry.title.rendered,
     //     date: entry.date,
     //     content: markdownContent,
-    //     author: entry.author,
-    //     categories: mainCategory, // Asignar la categoría principal
-    //     Subcategory1: subcategory1 || null, // Asignar Subcategory1 correcta
-    //     Subcategory2: subcategory2 || null, // Asignar Subcategory2 correcta
+    //     author: authorName,
+    //     categories: mainCategory,
+    //     Subcategory1: subcategory1,
+    //     Subcategory2: subcategory2,
     //     slug: entry.slug,
     //     mediaUrl: entry.media,
     //     mediaName: entry.mediaName,
+    //     subtitle: entry.excerpt.rendered,
+    //     old: true,
     //   };
-    //   console.log(dataToSend);
     //   // URL de la API de Strapi para crear una nueva entrada
-    //   const apiUrl = "http://127.0.0.1:1337/api/makings"; // Ajustar la URL según tu configuración
+    //   const apiUrl = "http://localhost:1337/api/makings"; // Ajustar la URL según tu configuración
     //   // Configuración de la solicitud POST a Strapi
     //   const requestOptions = {
     //     method: "POST",
@@ -145,17 +257,20 @@ module.exports = {
     //     fetch(apiUrl, requestOptions)
     //       .then((response) => {
     //         if (!response.ok) {
-    //           throw new Error("Error al crear la entrada en Strapi");
+    //           throw new Error(
+    //             "Error al crear la entrada en Strapi " + response.status
+    //           );
     //         }
     //         return response.json();
     //       })
     //       .then((data) => {
+    //         console.log(data);
     //         console.log("Entrada creada en Strapi:", data);
     //       })
     //       .catch((error) => {
     //         console.error("Error al crear la entrada en Strapi:", error);
     //       });
-    //   }, 10000);
+    //   }, 5000);
     // });
   },
 };

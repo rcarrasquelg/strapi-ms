@@ -362,6 +362,179 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiMakingMaking extends Schema.CollectionType {
+  collectionName: 'makings';
+  info: {
+    singularName: 'making';
+    pluralName: 'makings';
+    displayName: 'Making';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    slug: Attribute.String;
+    author: Attribute.Enumeration<
+      [
+        'Nacho Caldentey',
+        'Nancy Medica',
+        'Juan Diego Raimondi',
+        'Cesar DOnofrio',
+        'Luciana Caltabiano',
+        'Juan De Abreu',
+        'Natalia Martinez Lopez',
+        'Sergio Marchetti',
+        'Sol Romeo',
+        'Fernando Florez',
+        'Estuardo Robles',
+        'Lisandro Martinez',
+        'Mariano Jurich',
+        'Leandro Gonzalez',
+        'Damian Muti',
+        'Walter Zalazar',
+        'Matias Beckerle',
+        'Lucas Pelizza',
+        'Juan Muguruza',
+        'Gabriel Buyatti',
+        'Julian Chierichetti',
+        'Mariano Ravinale',
+        'Hernan Federico Cardoso',
+        'Santiago Tribiani',
+        'Marcelo Vazquez',
+        'Martin Deniro',
+        'Agustina Orsi',
+        'Noelia Franco',
+        'Betiana Castro',
+        'Mart\u00EDn Fantini',
+        'Jennifer Greyling',
+        'Paula Alonso Ishihara',
+        'Brian Sztamfater',
+        'Cristian Soria',
+        'Valentin Zamorano',
+        'Miguel Minoldo',
+        'Mariano Herrera',
+        'Franco Arza',
+        'Nicol\u00E1s Martello',
+        'Jose Vazquez',
+        'Alejandra Garcia',
+        'Carlos Sampedro',
+        'Leslie Mariotti',
+        'Sebastian Grimberg',
+        'Martin Keimel',
+        'Celeste Senoseain',
+        'Federico Toledo',
+        'Dolores Finochietto',
+        'Agustin Sciotti',
+        'Marcos Rigoli',
+        'Eduardo Tolba\u00F1os',
+        'Daniel Altamirano',
+        'Pablo Popea',
+        'Ruben Lunda',
+        'Mauro Maldini',
+        'Damasia Aberg',
+        'Hernan Fino',
+        'Florencia Vispo',
+        'Esteban Tedesco',
+        'Nazareno Oviedo',
+        'Maria Alderete',
+        'Fernando Irahola',
+        'Silvia Vassolo',
+        'Melina Soto',
+        'Luis Sosa',
+        'Marcelo Spezia',
+        'Mariano Gayoso',
+        'Marcos Martinez',
+        'Cintia Lenkovich',
+        'Isidro Moreno',
+        'Gabriel Zimmermann',
+        'Sabrina Escalante',
+        'Rocio Colacci',
+        'Jos\u00E9 Sotes',
+        'Fabi\u00E1n Andr\u00E9s Levin',
+        'Augusto Ghidini',
+        'Diego Suarez',
+        'Noelia Garcia',
+        'Paula Cascu',
+        'Dolores Moyano',
+        'Martina Massa',
+        'Co-authored',
+        'Juan Fazzini',
+        'Nicolas Monetto',
+        'Horacio Tovo',
+        'Valeria Ruggieri',
+        'Jeronimo Correa',
+        'Lucas Pellegrini',
+        'Making Sense',
+        'Ezequiel Szturmaj',
+        'David Salazar Zaffaroni',
+        'Vanina Vargas',
+        'Fabricio Barbagallo',
+        'Mariana Bevilacqua',
+        'Matias Caria',
+        'Martin Nedbal',
+        'Jose Basurto',
+        'Santiago Altobello',
+        'Candela Corpacci',
+        'Maria Buiras',
+        'Nadia Vega',
+        'Pablo Vittori',
+        'Sabrina Lujan',
+        'Lucas Boczkowski',
+        'Leyla Alfonzo',
+        'Jose Sauro',
+        'Juliana Torre'
+      ]
+    >;
+    date: Attribute.DateTime;
+    mediaURL: Attribute.String;
+    mediaName: Attribute.String;
+    category1: Attribute.Enumeration<
+      [
+        'Digital Transformation Insights',
+        'AI for Business',
+        'User Experience Optimization',
+        'Tech Advisory Insights',
+        'Enterprise Value Optimization',
+        'Industry-Specific Insights',
+        'Null'
+      ]
+    >;
+    category2: Attribute.Enumeration<
+      [
+        'Digital Transformation Insights',
+        'AI for Business',
+        'User Experience Optimization',
+        'Tech Advisory Insights',
+        'Enterprise Value Optimization',
+        'Industry-Specific Insights',
+        'Null'
+      ]
+    >;
+    Video: Attribute.Media;
+    subtitle: Attribute.String;
+    old: Attribute.Boolean & Attribute.DefaultTo<false>;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::making.making',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::making.making',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -788,267 +961,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiMakingMaking extends Schema.CollectionType {
-  collectionName: 'makings';
-  info: {
-    singularName: 'making';
-    pluralName: 'makings';
-    displayName: 'Making';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.RichText;
-    slug: Attribute.String;
-    categories: Attribute.JSON;
-    author: Attribute.Integer;
-    date: Attribute.DateTime;
-    mediaURL: Attribute.String;
-    mediaName: Attribute.String;
-    Subcategory1: Attribute.Enumeration<
-      [
-        'AgTech',
-        'AI',
-        'Tech Due Diligence',
-        'Cloud',
-        'Coding',
-        'CompanyCulture',
-        'Process optimization',
-        'Value creation',
-        'Digital Transformation',
-        'Events',
-        'Featured',
-        'Healthcare',
-        'Innovation',
-        'Tech',
-        'Merge & Aqcuisitions',
-        'Mobile',
-        'News',
-        'Opinion',
-        'PrivateEquity',
-        'ProjectManagement',
-        'QualityAssurance',
-        'Team',
-        'UserInterface',
-        'UX'
-      ]
-    >;
-    Subcategory2: Attribute.Enumeration<
-      [
-        'AgTech',
-        'AI',
-        'Tech Due Diligence',
-        'Cloud',
-        'Coding',
-        'CompanyCulture',
-        'Process optimization',
-        'Value creation',
-        'Digital Transformation',
-        'Events',
-        'Featured',
-        'Healthcare',
-        'Innovation',
-        'Tech',
-        'Merge & Aqcuisitions',
-        'Mobile',
-        'News',
-        'Opinion',
-        'PrivateEquity',
-        'ProjectManagement',
-        'QualityAssurance',
-        'Team',
-        'UserInterface',
-        'UX'
-      ]
-    >;
-    Video: Attribute.Media;
-    coAuthor: Attribute.Enumeration<['A', 'B', 'C']>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::making.making',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::making.making',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiNewNew extends Schema.CollectionType {
-  collectionName: 'news';
-  info: {
-    singularName: 'new';
-    pluralName: 'news';
-    displayName: 'new';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Category: Attribute.Enumeration<['Business', 'UX']>;
-    Subcategory1: Attribute.Enumeration<['A', 'B']>;
-    Subcategory2: Attribute.Enumeration<['A', 'B', 'C', 'D']>;
-    content: Attribute.RichText;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPlatformPlatform extends Schema.CollectionType {
-  collectionName: 'platforms';
-  info: {
-    singularName: 'platform';
-    pluralName: 'platforms';
-    displayName: 'Platform';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    supported: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
-    company: Attribute.Enumeration<['Sony', 'Nintendo', 'Microsoft', 'SNK']>;
-    launch: Attribute.Date;
-    videogames: Attribute.Relation<
-      'api::platform.platform',
-      'manyToMany',
-      'api::videogame.videogame'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::platform.platform',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::platform.platform',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPostPost extends Schema.CollectionType {
-  collectionName: 'posts';
-  info: {
-    singularName: 'post';
-    pluralName: 'posts';
-    displayName: 'Post';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    publishDate: Attribute.DateTime;
-    content: Attribute.Blocks;
-    media: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTestTest extends Schema.CollectionType {
-  collectionName: 'tests';
-  info: {
-    singularName: 'test';
-    pluralName: 'tests';
-    displayName: 'Test';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    title: Attribute.String;
-    date: Attribute.String;
-    content: Attribute.RichText;
-    slug: Attribute.String;
-    categories: Attribute.JSON;
-    tags: Attribute.JSON;
-    author: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiVideogameVideogame extends Schema.CollectionType {
-  collectionName: 'videogames';
-  info: {
-    singularName: 'videogame';
-    pluralName: 'videogames';
-    displayName: 'Videogame';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
-        maxLength: 150;
-      }>;
-    launch: Attribute.Date;
-    description: Attribute.Blocks & Attribute.Required;
-    cover: Attribute.Media;
-    slug: Attribute.UID<'api::videogame.videogame', 'title'>;
-    platforms: Attribute.Relation<
-      'api::videogame.videogame',
-      'manyToMany',
-      'api::platform.platform'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::videogame.videogame',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::videogame.videogame',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1059,6 +971,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::making.making': ApiMakingMaking;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1067,12 +980,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::making.making': ApiMakingMaking;
-      'api::new.new': ApiNewNew;
-      'api::platform.platform': ApiPlatformPlatform;
-      'api::post.post': ApiPostPost;
-      'api::test.test': ApiTestTest;
-      'api::videogame.videogame': ApiVideogameVideogame;
     }
   }
 }
